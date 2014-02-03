@@ -14,13 +14,14 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 	// All Static variables
 	// Database Version
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 2;
 
 	// Database Name
 	private static final String DATABASE_NAME = "contactsManager";
 
 	// Contacts table name
 	private static final String TABLE_CONTACTS = "contacts";
+	
 
 	// Contacts Table Columns names
 	private static final String KEY_ID = "id";
@@ -74,7 +75,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
-				KEY_USERNAME, KEY_PASSWORD }, KEY_USERNAME + "=?",
+				KEY_USERNAME, KEY_PASSWORD, KEY_EMAIL }, KEY_USERNAME + "=?",
 				new String[] {username}, null, null, null, null);
 		if (cursor != null){
 			cursor.moveToFirst();
@@ -90,7 +91,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
-				KEY_USERNAME, KEY_PASSWORD }, KEY_USERNAME + "=?",
+				KEY_USERNAME, KEY_PASSWORD, KEY_EMAIL }, KEY_USERNAME + "=?",
 				new String[] {username}, null, null, null, null);
 		if(cursor != null){
 			cursor.moveToFirst();
