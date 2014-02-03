@@ -38,6 +38,7 @@ public class RegisterActivity extends Activity {
 		getUsers.setOnClickListener(new OnClickListener(){
 			public void onClick(View v){
 				List<Customer> customerList = getCustomerList();
+				
 				for(int i = 0; i < customerList.size(); i++)
 					((EditText) findViewById(R.id.editText1)).setText(((EditText) findViewById(R.id.editText1)).getText().toString() 
 							+ "\n" + customerList.get(i).getUsername() + " : " + customerList.get(i).getPassword());

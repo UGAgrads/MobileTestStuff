@@ -120,8 +120,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		// looping through all rows and adding to list
 		if (cursor.moveToFirst()) {
 			do {
-				Customer contact = new Customer(cursor.getString(1), cursor.getString(2), cursor.getString(3));
-				customerList.add(contact);
+				customerList.add(new Customer(cursor.getString(1), cursor.getString(2), cursor.getString(3)));
 			} while (cursor.moveToNext());
 		}
 
